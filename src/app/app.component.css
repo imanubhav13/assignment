@@ -1,0 +1,51 @@
+img{
+    max-width: 100%;
+    max-height: 100%;
+    display: block; /* remove extra space below image */
+}
+
+
+.custom_image{
+    filter: grayscale();
+}
+
+.bg1{
+    padding: 20px;
+    background-color: rgb(243, 223, 226);
+}
+
+.bg2{
+    padding: 20px;
+    background-color: rgb(250, 182, 108);
+}
+
+.bg3{
+    padding: 20px;
+    background-color: rgb(76, 177, 240);
+}
+
+.t1{
+    color: rgb(250, 182, 108);
+}
+
+.t2{
+    color: white;
+}
+
+
+.t1:hover, .t2:hover, li, img{
+    cursor: pointer;
+} 
+
+
+.h1{
+    font-size:x-large;
+    font-weight: 300;
+    color: rgb(0, 0, 0);
+}
+
+.h2{
+    font-size:x-large;
+    font-weight: 300;
+    color: white;
+}

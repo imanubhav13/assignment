@@ -1,0 +1,177 @@
+<div class="container">
+  <div style="margin-bottom: 100px">
+    <div
+      class="page-header d-flex justify-content-between align-items-center p-2"
+    >
+      <div class="p1">
+        <img src="../assets/AV-Logo.svg" />
+      </div>
+      <div>
+        <nav class="navbar p-1">
+          <ul class="navbar nav p-1">
+            <li
+              class="navbar item p-1 cursor-pointer"
+              style="font-weight: 600; margin-left: 10px; margin-right: 10px"
+            >
+              Case Studies
+            </li>
+            <li
+              class="navbar item p-1 cursor-pointer"
+              style="font-weight: 600; margin-left: 10px; margin-right: 10px"
+            >
+              Services
+            </li>
+            <li
+              class="navbar item p-1 cursor-pointer"
+              style="font-weight: 600; margin-left: 10px; margin-right: 10px"
+            >
+              About
+            </li>
+            <li
+              class="navbar item p-1 text-warning"
+              style="margin-left: 10px; margin-right: 10px"
+            >
+              Insights
+            </li>
+          </ul>
+          <button class="btn btn-warning text-white" style="font-weight: 600">
+            Contact
+          </button>
+        </nav>
+      </div>
+    </div>
+    <div style="margin-top: 20px; background-color: #f2f2f2">
+      <div class="row">
+        <div class="col-6">
+          <img src="../assets/image_1.jpeg" />
+        </div>
+        <div class="col-6 d-flex align-items-center">
+          <div class="row">
+            <h2>What is Lorem Ipsum?</h2>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section style="margin-top: 20px">
+      <div class="row">
+        <div
+          class="col-4 mt-3"
+          *ngFor="
+            let items of data | paginate : { itemsPerPage: 9, currentPage: p }
+          "
+        >
+          <div class="p-1" style="padding: 10px">{{ items.name }}</div>
+          <div
+            class="p-1"
+            [ngClass]="{
+              bg1: items.color == 1,
+              bg2: items.color == 2,
+              bg3: items.color == 3
+            }"
+            style="
+              width: 100%;
+              height: 180px;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+            "
+          >
+            <span [ngClass]="{ h1: items.color == 1, h2: items.color != 1 }">
+              {{ items.desc }}
+            </span>
+            <p [ngClass]="{ t1: items.color == 1, t2: items.color != 1 }">
+              Read More
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="d-flex justify-content-center p-4">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+    <hr />
+    <footer class="text-center text-lg-start text-muted">
+      <section>
+        <div class="container text-center text-md-start mt-5">
+          <div class="row mt-3">
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">About US</h6>
+              <p class="text-reset" *ngFor="let items of teamData">
+                {{ items }}
+              </p>
+            </div>
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">Services</h6>
+              <p class="text-reset" *ngFor="let items of serviceData">
+                {{ items }}
+              </p>
+            </div>
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">Industries</h6>
+              <p class="text-reset" *ngFor="let items of industryData">
+                {{ items }}
+              </p>
+            </div>
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">Technologies</h6>
+              <p class="text-reset" *ngFor="let items of technologyData">
+                {{ items }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div
+        class="d-flex row align-items-center"
+        style="margin-top: 50px; margin-bottom: 50px"
+      >
+        <div class="col-md-3 col-lg-4 col-xl-3 m-0">
+          <img src="../assets/AV-Logo.svg" />
+        </div>
+        <div class="col-md-3 col-lg-4 col-xl-3 m-0">
+          <p class="p-0 m-0 text-dark" style="font-weight: 700">
+            General Inquiries:
+          </p>
+          <p class="p-0 m-0 text-dark" style="font-weight: 500">
+            info@appventurez.com
+          </p>
+        </div>
+        <div class="col-md-3 col-lg-4 col-xl-3 m-0">
+          <p class="p-0 m-0 text-dark" style="font-weight: 700">
+            For Business Inquiries:
+          </p>
+          <p class="p-0 m-0 text-dark" style="font-weight: 500">
+            partners@appventurez.com
+          </p>
+        </div>
+        <div class="col-md-3 col-lg-4 col-xl-3 m-0">
+          <div class="d-flex justify-content-center">
+            <a href="" class="me-4 text-reset">
+              <i class="fa fa-instagram text-warning"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+              <i class="fa fa-linkedin text-warning"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+              <i class="fa fa-dribbble text-warning"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+              <i class="fa fa-behance text-warning"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-start mt-4 text-dark">
+        © Copyright 2018-2023 Appventurez. All Rights Reserved.
+      </div>
+    </footer>
+  </div>
+</div>
